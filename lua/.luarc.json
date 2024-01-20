@@ -2,6 +2,7 @@
     "diagnostics.globals": [
         "vim",
         "set",
-        "number"
+        "number",
+        "buffer"
     ]
 }

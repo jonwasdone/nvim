@@ -26,6 +26,8 @@ return {
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
 			})
+			vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
