@@ -29,8 +29,39 @@ return {
       lspconfig.tailwindcss.setup({
         capabilities = capabilities,
       })
+      lspconfig.html.setup({
+        capabilities = capabilities,
+      })
       vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+      lspconfig.emmet_ls.setup({
+        -- on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = {
+          "css",
+          "eruby",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "less",
+          "sass",
+          "scss",
+          "svelte",
+          "pug",
+          "typescriptreact",
+          "vue",
+        },
+        init_options = {
+          html = {
+            options = {
+              -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+              ["bem.enabled"] = true,
+            },
+          },
+        },
+      })
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
