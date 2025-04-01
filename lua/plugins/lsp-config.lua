@@ -32,6 +32,9 @@ return {
       lspconfig.html.setup({
         capabilities = capabilities,
       })
+      lspconfig.pyright.setup({
+        capabilities = capabilities,
+      })
       vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
       capabilities.textDocument.completion.completionItem.snippetSupport = true
