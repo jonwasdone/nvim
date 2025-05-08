@@ -17,10 +17,7 @@ return {
         enable = false,
       },
     })
-    require("mini.surround").setup()
-    require("mini.completion").setup()
     require("mini.move").setup()
-    require("mini.indentscope").setup()
     require("mini.fuzzy").setup()
   end,
 }
