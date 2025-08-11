@@ -8,4 +8,5 @@ vim.cmd("set cmdheight=0")
 vim.g.mapleader = " "
 
 vim.opt.number = true
+vim.opt.conceallevel = 1
 vim.opt.relativenumber = true
